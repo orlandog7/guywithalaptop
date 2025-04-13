@@ -2,31 +2,27 @@
 import { NextResponse } from 'next/server';
 import { parseStringPromise } from 'xml2js';
 
+const RSS_URL = 'https://feeds.finance.yahoo.com/rss/2.0/headline?s=^GSPC&region=US&lang=en-US';
 const AZURE_ENDPOINT = process.env.AZURE_TEXT_ANALYTICS_ENDPOINT;
 const AZURE_KEY = process.env.AZURE_TEXT_ANALYTICS_KEY;
-
-const RSS_URL = 'https://feeds.finance.yahoo.com/rss/2.0/headline?s=%5EGSPC&region=US&lang=en-US'; // S&P 500 market news
 
 export async function GET() {
   try {
     const rssRes = await fetch(RSS_URL);
     const rssText = await rssRes.text();
 
-    const parsed = await parseStringPromise(rssText);
-    const items = parsed.rss.channel[0].item || [];
+    const parsed = await parseStringPromise(rssText, { explicitArray: false });
+    const items = parsed?.rss?.channel?.item;
 
-    const articles = items.slice(0, 10).map((item) => ({
-      title: item.title[0],
-    }));
-
-    if (!articles.length) {
-      return NextResponse.json({ error: 'No news articles found' }, { status: 500 });
+    if (!items || items.length === 0) {
+      return NextResponse.json({ error: 'No headlines found' }, { status: 500 });
     }
 
-    const documents = articles.map((article, i) => ({
+    const headlines = Array.isArray(items) ? items.slice(0, 10) : [items];
+    const documents = headlines.map((item, i) => ({
       id: `${i + 1}`,
       language: 'en',
-      text: article.title,
+      text: item.title || '',
     }));
 
     const azureRes = await fetch(`${AZURE_ENDPOINT}/text/analytics/v3.1/sentiment`, {
@@ -48,7 +44,7 @@ export async function GET() {
 
     return NextResponse.json({ results });
   } catch (err) {
-    console.error(err);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    console.error('Sentiment API error:', err);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

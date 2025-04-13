@@ -67,7 +67,22 @@ export default function ProjectsPage() {
             </Link>
           </div>
 
-
+            {/* Portfolio Build Demo */}
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md space-y-4">
+              <h3 className="text-xl font-bold text-blue-500 dark:text-blue-400">
+                Portfolio Site (Built with Azure & Next.js)
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300">
+                This site was built using modern tools like Next.js, Tailwind, Azure Static Web Apps, and GitHub CI/CD. It features live AI demos, reusable components, and a custom domain hosted on Azure.
+              </p>
+              <Link
+                href="/projects/portfolio-build"
+                className="inline-block mt-2 text-blue-600 dark:text-blue-400 hover:underline font-medium"
+              >
+                View Project →
+              </Link>
+            </div>
+            
         </div>
       </main>
     </Layout>

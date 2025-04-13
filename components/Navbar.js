@@ -62,6 +62,14 @@ export default function Navbar() {
                 >
                   Sentiment Yahoo Finance
                 </a>
+                
+                <a
+                  href="/projects/portfolio-build"
+                  className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  Portfolio Build Demo
+                </a>
+                
                 <a
                   href="/projects"
                   className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-gray-700"

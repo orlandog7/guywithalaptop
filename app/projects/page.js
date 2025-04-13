@@ -35,7 +35,7 @@ export default function ProjectsPage() {
             </Link>
           </div>
 
-            {/* SentimentTwitter */}
+            {/* SentimentYahooFinance */}
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 space-y-2">
             <h2 className="text-2xl font-semibold text-blue-500 dark:text-blue-400">
               AI-Powered Sentiment Analysis
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
               A live sentiment analysis demo using Azure AI to score headlines from Yahoo Finance’s RSS feed and visualize market emotion.
             </p>
             <Link
-              href="/projects/sentiment-twitter"
+              href="/projects/sentiment-yahoo-finance"
               className="inline-block text-blue-600 dark:text-blue-400 hover:underline font-medium mt-2"
             >
               View Project →

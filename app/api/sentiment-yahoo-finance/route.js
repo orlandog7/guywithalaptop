@@ -1,4 +1,4 @@
-// app/api/sentimenttwitter/route.js
+// app/api/sentiment-yahoo-finance/route.js
 import { NextResponse } from 'next/server';
 import { parseStringPromise } from 'xml2js';
 

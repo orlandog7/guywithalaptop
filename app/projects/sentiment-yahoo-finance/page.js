@@ -1,14 +1,14 @@
-// app/projects/sentiment-twitter/page.js
+// app/projects/sentiment-yahoo-finance/page.js
 import Layout from '@/components/Layout';
-import SentimentTwitter from '@/components/SentimentTwitter';
+import SentimentYahooFinance from '@/components/SentimentYahooFinance';
 
 export const metadata = {
-  title: 'SentimentTwitter | A Guy With a Laptop',
+  title: 'Sentiment Yahoo Finance | A Guy With a Laptop',
   description:
     'A live sentiment analysis demo that fetches tweets on #StockMarket and scores them with Azure AI.',
 };
 
-export default function SentimentTwitterPage() {
+export default function SentimentYahooFinancePage() {
   return (
     <Layout>
       <main className="min-h-screen bg-gray-100 dark:bg-gray-900 p-6 md:p-12 text-slate-700 dark:text-gray-100">
@@ -30,7 +30,7 @@ export default function SentimentTwitterPage() {
             <h2 className="text-2xl font-semibold mb-4 text-blue-500 dark:text-blue-400">
               Live Sentiment Preview
             </h2>
-            <SentimentTwitter />
+            <SentimentYahooFinance />
           </section>
         </div>
       </main>

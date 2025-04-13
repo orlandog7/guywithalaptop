@@ -67,34 +67,40 @@ export default function FredChart({ seriesId: propSeriesId, compact = false }) {
   return (
     <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md mt-6">
       {!compact && (
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-          <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">
-            {currentLabel} (Last {years} Year{years > 1 ? 's' : ''})
-          </h3>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <select
-              value={seriesId}
-              onChange={(e) => setSeriesId(e.target.value)}
-              className="text-sm p-2 rounded bg-gray-100 dark:bg-gray-700 text-slate-700 dark:text-white"
-            >
-              {SERIES_OPTIONS.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.label}
-                </option>
-              ))}
-            </select>
-            <select
-              value={years}
-              onChange={(e) => setYears(parseInt(e.target.value))}
-              className="text-sm p-2 rounded bg-gray-100 dark:bg-gray-700 text-slate-700 dark:text-white"
-            >
-              <option value={1}>1 Year</option>
-              <option value={2}>2 Years</option>
-              <option value={5}>5 Years</option>
-              <option value={10}>10 Years</option>
-            </select>
+        <>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">
+              {currentLabel} (Last {years} Year{years > 1 ? 's' : ''})
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <select
+                value={seriesId}
+                onChange={(e) => setSeriesId(e.target.value)}
+                className="text-sm p-2 rounded bg-gray-100 dark:bg-gray-700 text-slate-700 dark:text-white"
+              >
+                {SERIES_OPTIONS.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.label}
+                  </option>
+                ))}
+              </select>
+              <select
+                value={years}
+                onChange={(e) => setYears(parseInt(e.target.value))}
+                className="text-sm p-2 rounded bg-gray-100 dark:bg-gray-700 text-slate-700 dark:text-white"
+              >
+                <option value={1}>1 Year</option>
+                <option value={2}>2 Years</option>
+                <option value={5}>5 Years</option>
+                <option value={10}>10 Years</option>
+              </select>
+            </div>
           </div>
-        </div>
+
+          <div className="bg-blue-50 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-sm p-3 rounded-md border border-blue-200 dark:border-blue-700 mb-4">
+            Live economic data is fetched from the <span className="font-medium">FRED API</span> and delivered via <span className="font-medium">Azure Functions</span>.
+          </div>
+        </>
       )}
 
       {error || data.length === 0 ? (

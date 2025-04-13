@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 import { AiOutlineHome, AiOutlineProject } from 'react-icons/ai';
-import { FiMail } from 'react-icons/fi';
+import { FiMail, FiGithub } from 'react-icons/fi';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -57,10 +57,10 @@ export default function Navbar() {
                   Economic Dashboard
                 </a>
                 <a
-                  href="/projects/sentiment-twitter"
+                  href="/projects/sentiment-yahoo-finance"
                   className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
-                  SentimentTwitter
+                  Sentiment Yahoo Finance
                 </a>
                 <a
                   href="/projects"
@@ -79,6 +79,16 @@ export default function Navbar() {
           >
             <FiMail className="w-4 h-4" />
             Contact
+          </a>
+
+          <a
+            href="https://github.com/orlandog7/guywithalaptop"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-blue-500"
+          >
+            <FiGithub className="w-4 h-4" />
+            GitHub
           </a>
         </div>
       </div>

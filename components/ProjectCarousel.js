@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import Link from 'next/link';
 import QuestionAnswering from './QuestionAnswering';
 import FredChart from './FredChart';
-import SentimentTwitter from './SentimentTwitter';
+import SentimentYahooFinance from './SentimentYahooFinance';
 
 export default function ProjectCarousel() {
   const prevRef = useRef(null);
@@ -61,7 +61,7 @@ export default function ProjectCarousel() {
             </div>
           </SwiperSlide>
 
-          {/* Slide 2: Twitter/X Sentiment */}
+          {/* Slide 2: YahooFinance/X Sentiment */}
           <SwiperSlide>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 ease-in-out space-y-4">
               <h3 className="text-xl font-bold text-blue-500 dark:text-blue-400">
@@ -71,10 +71,10 @@ export default function ProjectCarousel() {
                 Real-time sentiment analysis from finance headlines via Yahoo, scored using Azure AI.
               </p>
 
-              <SentimentTwitter compact />
+              <SentimentYahooFinance compact />
 
               <Link
-                href="/projects/sentiment-twitter"
+                href="/projects/sentiment-yahoo-finance"
                 className="inline-block text-blue-600 dark:text-blue-400 hover:underline font-medium mt-2"
               >
                 View Project →

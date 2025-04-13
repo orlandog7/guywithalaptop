@@ -8,13 +8,17 @@ const AZURE_KEY = process.env.AZURE_TEXT_ANALYTICS_KEY;
 
 export async function GET() {
   try {
+    console.log('Fetching RSS feed from:', RSS_URL);
     const rssRes = await fetch(RSS_URL);
     const rssText = await rssRes.text();
+    console.log('RSS feed fetched successfully.');
 
     const parsed = await parseStringPromise(rssText, { explicitArray: false });
+    console.log('RSS feed parsed successfully.');
     const items = parsed?.rss?.channel?.item;
 
     if (!items || items.length === 0) {
+      console.error('No items found in RSS feed');
       return NextResponse.json({ error: 'No headlines found' }, { status: 500 });
     }
 
@@ -25,6 +29,7 @@ export async function GET() {
       text: item.title || '',
     }));
 
+    console.log('Sending documents to Azure Text Analytics:');
     const azureRes = await fetch(`${AZURE_ENDPOINT}/text/analytics/v3.1/sentiment`, {
       method: 'POST',
       headers: {
@@ -35,6 +40,7 @@ export async function GET() {
     });
 
     const azureData = await azureRes.json();
+    console.log('Azure Text Analytics response received.');
 
     const results = azureData.documents.map((doc) => ({
       text: documents[parseInt(doc.id) - 1].text,

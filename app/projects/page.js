@@ -3,7 +3,7 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Projects | A Guy With a Laptop',
+  title: 'Orlando G. - Demo Projects',
   description: 'Explore AI and cloud-powered demo projects built by Orlando Gonzalez.',
 };
 

@@ -3,7 +3,7 @@ import Layout from '@/components/Layout';
 import CollapsibleSection from '@/components/CollapsibleSection';
 
 export const metadata = {
-  title: 'Portfolio Build Demo | A Guy With a Laptop',
+  title: 'Portfolio Build Demo | Orlando G.',
   description: 'How this site was built and deployed using Azure, GitHub, and Next.js.',
 };
 

@@ -22,9 +22,11 @@ export default function Navbar() {
   return (
     <nav className="bg-white dark:bg-gray-800 shadow fixed top-0 left-0 right-0 z-50">
       <div className="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
+        {/*
         <span className="font-bold text-slate-800 dark:text-white text-lg">
           A Guy With a Laptop
         </span>
+        */}
 
         <div className="flex items-center space-x-4 text-sm">
           {/* Home */}

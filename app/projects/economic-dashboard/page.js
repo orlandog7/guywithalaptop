@@ -2,7 +2,7 @@ import Layout from '@/components/Layout';
 import FredChart from '@/components/FredChart';
 
 export const metadata = {
-  title: 'U.S. Economic Dashboard | A Guy With a Laptop',
+  title: 'U.S. Economic Dashboard | Orlando G.',
   description: 'An AI-powered dashboard visualizing real-time U.S. economic sentiment using FRED data.',
 };
 

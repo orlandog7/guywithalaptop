@@ -2,7 +2,7 @@ import Layout from '@/components/Layout';
 import QuestionAnswering from '@/components/QuestionAnswering';
 
 export const metadata = {
-  title: 'AI Customer Support Assistant | A Guy With a Laptop',
+  title: 'AI Customer Support Assistant | Orlando G.',
   description:
     'An AI-powered assistant demo built with Azure Language Studio that answers real-world customer support questions.',
 };

@@ -3,7 +3,7 @@ import Layout from '@/components/Layout';
 import SentimentYahooFinance from '@/components/SentimentYahooFinance';
 
 export const metadata = {
-  title: 'Sentiment Yahoo Finance | A Guy With a Laptop',
+  title: 'Sentiment Yahoo Finance | Orlando G.',
   description:
     'A live sentiment analysis demo that fetches tweets on #StockMarket and scores them with Azure AI.',
 };

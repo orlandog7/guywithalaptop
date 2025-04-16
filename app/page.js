@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Portfolio | A Guy With a Laptop',
+  title: 'Orlando G. - Live Demo Projects',
   description: 'The personal portfolio of Orlando — showcasing cloud and AI projects built with Next.js and Azure.',
 };
 

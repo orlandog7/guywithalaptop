@@ -17,44 +17,27 @@ export default function HomeContent() {
         <div className="max-w-4xl mx-auto">
 
           {/* Hero */}
-          <header className="mb-8 text-center md:text-left space-y-4 flex flex-col md:flex-row items-center gap-6">
-            <div className="relative">
-              <div className="absolute inset-0 w-36 h-36 rounded-full bg-blue-500 opacity-20 blur-2xl -z-10 mx-auto md:mx-0"></div>
-              <img
-                src="/images/HeadShot-OG-01.jpg"
-                alt="Orlando avatar"
-                loading="lazy"
-                className="w-32 h-32 rounded-full shadow-lg object-cover ring-2 ring-blue-500 dark:ring-blue-400 mx-auto md:mx-0"
-              />
-            </div>
-
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white">Hi, I’m Orlando</h1>
-              <p className="text-lg md:text-xl mt-2 text-slate-600 dark:text-gray-300">
-                An Experienced IT Project Manager with a Focus on Artificial Intelligence and Machine Learning
-              </p>
-            </div>
+          <header className="mb-8 text-center md:text-left space-y-4">
+            <h1 className="text-3xl font-semibold text-gray-900">Welcome to Orlando's Sandbox</h1>
+            <p className="text-lg text-gray-600">Check out some of the AI projects below:</p>
           </header>
-
-          {/* About Me */}
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-slate-800 dark:text-slate-100">About Me</h2>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md space-y-4">
-              <p>
-                I’m an IT Project Manager with 30 years of experience leading software and infrastructure projects. I've helped teams deliver complex systems and bring new products to life.
-              </p>
-              <p>
-                Lately, I’ve been exploring how AI and cloud technologies can solve real business problems — from improving support to unlocking insights from data.
-              </p>
-            </div>
-          </section>
 
           {/* Demo Projects */}
           <section id="projects" className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4 text-slate-800 dark:text-slate-100">Demo Projects</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-slate-800 dark:text-slate-100">Live Demo Projects</h2>
             <ProjectCarousel />
           </section>
 
+                    {/* About Me */}
+                    <section className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-slate-800 dark:text-slate-100">About Me</h2>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md space-y-4">
+              <p>
+              Twenty-eight years total IT experience: 12 as a PM, 5 as a BA and 11 as a Developer & Data Analyst.  Delivering end-to-end software solutions by managing on-shore and off-shore teams for government, pharmaceutical and financial clients using Agile, Scrum, Kanban, Waterfall, SDLC, ITIL, and Six-Sigma.
+              </p>
+            </div>
+          </section>
+          
           {/* Certifications */}
           <Certifications />
 

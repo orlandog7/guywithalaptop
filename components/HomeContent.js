@@ -45,19 +45,7 @@ export default function HomeContent() {
           <Contact />
 
           {/* Resume */}
-          <section className="mt-8 mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-slate-800 dark:text-slate-100">Resume</h2>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-400 transition-colors"
-              >
-                Download My Resume
-              </a>
-            </div>
-          </section>
+
 
         </div>
       </main>
